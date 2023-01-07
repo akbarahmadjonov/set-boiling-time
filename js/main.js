@@ -1,6 +1,7 @@
 const elForm = document.querySelector(".form");
 const elInput = document.querySelector(".form-control");
 const elResults = document.querySelector(".result-all");
+const elBubbleEff = document.querySelector(".results");
 const elConfetEffect = document.querySelector(".confet-effect");
 const elSpanError = document.querySelector(".error-input");
 const elAnimRemover = document.querySelector(".remove-bt");
@@ -13,11 +14,11 @@ function boilNow(boilingVal, node) {
     "mt-5 ms-2 fs-4 results text-dark d-flex d-block justify-content-center text-center"
   );
 
-  let limitedVal = +elInput.value + 1;
+  let limitedVal = elInput.value;
 
   let funInterval = setInterval(() => {
-    limitedVal--;
     newLi.textContent = limitedVal;
+    limitedVal--;
   }, 1000);
 
   setTimeout(() => {

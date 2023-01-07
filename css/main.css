@@ -44,6 +44,10 @@ body {
   animation: drop 0.3s infinite alternate ease-in-out;
 }
 
+.results-bg {
+  background-color: red;
+}
+
 .results:nth-child(1) {
   border-radius: 38% 62% 46% 54% / 46% 51% 49% 54%;
 }
