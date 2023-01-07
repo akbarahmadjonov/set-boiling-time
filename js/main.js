@@ -3,6 +3,8 @@ const elInput = document.querySelector(".form-control");
 const elResults = document.querySelector(".result-all");
 const elConfetEffect = document.querySelector(".confet-effect");
 const elSpanError = document.querySelector(".error-input");
+const elAnimRemover = document.querySelector(".remove-bt");
+const elErasesEffect = document.querySelector(".eraser");
 
 function boilNow(boilingVal, node) {
   let newLi = document.createElement("li");
@@ -23,10 +25,16 @@ function boilNow(boilingVal, node) {
     newLi.classList.add("d-none");
     if (limitedVal == 0) {
       elConfetEffect.classList.remove("d-none");
+      elErasesEffect.classList.remove("d-none");
     } else {
       elConfetEffect.classList.add("d-none");
     }
   }, limitedVal * 1000);
+
+  elAnimRemover.onclick = () => {
+    elConfetEffect.classList.add("d-none");
+    elErasesEffect.classList.add("d-none");
+  };
 
   elInput.value = "";
   node.appendChild(newLi);
